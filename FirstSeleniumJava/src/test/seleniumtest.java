@@ -22,7 +22,7 @@ public class seleniumtest {
 	}
 
 	public static void setBrowser() {
-		browser ="chrome";
+		browser ="firefox";
 
 	}
 
