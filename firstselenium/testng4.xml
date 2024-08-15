@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test name="Test">
+		<groups>
+			<define name="regression1"> <!-- Meta Group -->
+				<include name="sanity"></include>
+				<include name="regression"></include>
+				<include name="smoke"></include>
+			</define>
+
+			<run>
+				<include name="regression1"></include> <!-- Include Group -->
+				<exclude name="smoke"></exclude> <!-- Exclude Group -->
+				<include name="linux.*"></include> <!-- Use regular expression in groups-->
+				<include name="AllTest"></include>  <!-- Class level Group -->
+			</run>
+		</groups>
+
+		<classes>
+			<class name="grouping.GroupingTest" />
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
